@@ -8,6 +8,7 @@ import {Birds} from "./js/player/Birds.js";
 import {StartButton} from "./js/player/StartButton.js";
 import {Score} from "./js/player/Score.js";
 import {ApiExamples} from "./js/ApiExamples.js";
+import {Fly} from "./js/runtime/Fly.js";
 
 export class Main {
 
@@ -53,32 +54,39 @@ export class Main {
             .put('land', Land)
             .put('birds', Birds)
             .put('score', Score)
-            .put('startButton', StartButton);
-        // this.registerEvent();
+            .put('startButton', StartButton)
+            .put('fly', Fly)
+        ;
+
+        this.registerEvent();
         //创建铅笔要在游戏逻辑运行之前
         this.director.createPencil();
         this.director.run();
     }
 
-    // registerEvent() {
-    //     // this.canvas.addEventListener('touchstart', e => {
-    //     //     //屏蔽掉JS的事件冒泡
-    //     //     e.preventDefault();
-    //     //     if (this.director.isGameOver) {
-    //     //         console.log('游戏开始');
-    //     //         this.init();
-    //     //     } else {
-    //     //         this.director.birdsEvent();
-    //     //     }
-    //     // });
-    //
-    //     wx.onTouchStart(() => {
-    //         if (this.director.isGameOver) {
-    //             console.log('游戏开始');
-    //             this.init();
-    //         } else {
-    //             this.director.birdsEvent();
-    //         }
-    //     });
-    // }
+    registerEvent() {
+        // this.canvas.addEventListener('touchstart', e => {
+        //     //屏蔽掉JS的事件冒泡
+        //     e.preventDefault();
+        //     if (this.director.isGameOver) {
+        //         console.log('游戏开始');
+        //         this.init();
+        //     } else {
+        //         this.director.flyEvent();
+        //         this.director.walk();
+        //
+        //     }
+        // });
+
+
+        wx.onTouchStart(() => {
+            if (this.director.isGameOver) {
+                console.log('游戏开始');
+                this.init();
+            } else {
+                this.director.flyEvent();
+
+            }
+        });
+    }
 }

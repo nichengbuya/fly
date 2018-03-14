@@ -10,7 +10,7 @@
 	"compileType": "game",
 	"libVersion": "game",
 	"appid": "touristappid",
-	"projectname": "FlappyBirdMiniGame",
+	"projectname": "fly",
 	"isGameTourist": true,
 	"condition": {
 		"search": {

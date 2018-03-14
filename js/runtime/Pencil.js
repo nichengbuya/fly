@@ -1,13 +1,10 @@
-/**
- * Created by 傅令杰
- * 铅笔的基类
- */
+
 import { Sprite } from "../base/Sprite.js";
 import {DataStore} from "../base/DataStore.js";
 
 export class Pencil extends Sprite {
 
-  constructor( top,spacing) {
+  constructor( top) {
    const image=Sprite.getImage('pencilDown')
     super(image,
       0, 0,
@@ -16,8 +13,8 @@ export class Pencil extends Sprite {
       DataStore.getInstance().canvas.width, 0,
       image.width, image.height);
     this.top = top;
-    this.spacing=spacing;
-    this.moveSpeed = 1.5;
+
+    this.moveSpeed = 3;
   }
 
 

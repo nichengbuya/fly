@@ -8,7 +8,7 @@ export class BackGround extends Sprite{
        super(image, 0, 0,
            image.width, image.height,
            0, 0,
-           image.width, image.height);
+           DataStore.getInstance().canvas.width*2, DataStore.getInstance().canvas.height);
        //地板的水平变化坐标
        this.landX = 0;
        //地板的移动速度
@@ -17,7 +17,7 @@ export class BackGround extends Sprite{
 
     draw() {
         this.landX = this.landX + this.landSpeed;
-        if (this.landX > (this.img.width - DataStore.getInstance().canvas.width)) {
+        if (this.landX >  DataStore.getInstance().canvas.width) {
             this.landX =0;
         }
         super.draw(this.img,
@@ -66,7 +66,7 @@ export class BackGround extends Sprite{
 //             this.srcY,
 //             this.srcW,
 //             this.srcH,
-//             window.innerWidth-this.landX,
+//             DataStore.getinstance().canvas.width-this.landX,
 //             this.y,
 //             this.width,
 //             this.height

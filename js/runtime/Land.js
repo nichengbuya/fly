@@ -9,8 +9,8 @@ export class Land extends Sprite {
         const image = Sprite.getImage('land');
         super(image, 0, 0,
             image.width, image.height,
-            0, DataStore.getInstance().canvas.height - image.height,
-            image.width, image.height);
+            0, DataStore.getInstance().canvas.height -image.height,
+            DataStore.getInstance().canvas.width*2, image.height);
         //地板的水平变化坐标
         this.landX = 0;
         //地板的移动速度
@@ -19,7 +19,7 @@ export class Land extends Sprite {
 
     draw() {
         this.landX = this.landX + this.landSpeed;
-        if (this.landX > (this.img.width - DataStore.getInstance().canvas.width)) {
+        if (this.landX > DataStore.getInstance().canvas.width) {
             this.landX = 0;
         }
         super.draw(this.img,

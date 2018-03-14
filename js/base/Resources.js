@@ -1,8 +1,8 @@
 export const Resources = [
     ['background', 'res/background.png'],
     ['land', 'res/land.png'],
-    ['pencilUp', 'res/pie_up.png'],
     ['pencilDown', 'res/tramp.png'],
     ['birds', 'res/birds.png'],
-    ['startButton', 'res/start_button.png']
+    ['startButton', 'res/start_button.png'],
+    ['fly','res/fly.png']
 ];
