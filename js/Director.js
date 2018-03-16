@@ -53,7 +53,7 @@ export class Director {
 
 
 
-    //判断小鸟是否撞击地板和铅笔
+    
     check() {
         const birds = this.dataStore.get('fly');
         const pencils = this.dataStore.get('pencils');
@@ -73,10 +73,10 @@ export class Director {
         for (let i = 0; i < length; i++) {
             const pencil = pencils[i];
             const pencilBorder = {
-                top: pencil.y,
+                top: pencil.y+15,
                 bottom: pencil.y + pencil.height,
-                left: pencil.x,
-                right: pencil.x + pencil.width
+                left: pencil.x+8,
+                right: pencil.x + pencil.width-8
             };
 
             if (Director.isStrike(birdsBorder, pencilBorder)) {
