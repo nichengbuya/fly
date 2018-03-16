@@ -49,7 +49,7 @@ export class Fly extends Sprite {
         this.index = Math.floor(this.count);
         //
         //模拟重力加速度
-        const g = 0.98 / 6.5;
+        const g = 0.98 / 6;
         //向上移动一丢丢的偏移量
         const v=6;
         const offsetUp = 60;
